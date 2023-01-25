@@ -1005,7 +1005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.000015, y: 60.22003}
+  m_AnchoredPosition: {x: 25, y: 52.775}
   m_SizeDelta: {x: 632, y: 105.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581744805
@@ -1055,8 +1055,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 85
+  m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   StretchToDisplay: 1
   AspectRatio: 1.33
   EnableTVCurvature: 0
-  Curvature: 0
+  Curvature: 0.24
   TVOverlay: {fileID: 2800000, guid: 983b4e2248d599443981d96b39576aeb, type: 3}
   EnablePixelMask: 1
   PixelMaskTexture: {fileID: 2800000, guid: 55b9f85457b9afc46834d927aa2e61cc, type: 3}
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   PixelMaskBrightness: 1
   IQOffset: {x: 0, y: 0}
   IQScale: {x: 1, y: 1}
-  RFNoise: 0.25
+  RFNoise: 0.1
   LumaSharpen: 4
   QuantizeRGB: 0
   RBits: 8

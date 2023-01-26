@@ -44,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 2
+  - name: Obsticles
     uniqueID: 2000347667
+    locked: 0
+  - name: Player
+    uniqueID: 3306486431
+    locked: 0
+  - name: Over
+    uniqueID: 1967836593
     locked: 0

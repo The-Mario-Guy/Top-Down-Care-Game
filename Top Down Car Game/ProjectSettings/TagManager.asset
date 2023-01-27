@@ -47,6 +47,9 @@ TagManager:
   - name: Obsticles
     uniqueID: 2000347667
     locked: 0
+  - name: Goodies
+    uniqueID: 1107717231
+    locked: 0
   - name: Player
     uniqueID: 3306486431
     locked: 0

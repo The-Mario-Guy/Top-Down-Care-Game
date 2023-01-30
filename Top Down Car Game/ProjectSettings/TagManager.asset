@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Camera
   layers:
   - Default
   - TransparentFX
@@ -55,4 +56,13 @@ TagManager:
     locked: 0
   - name: Over
     uniqueID: 1967836593
+    locked: 0
+  - name: Over Over
+    uniqueID: 1091077623
+    locked: 0
+  - name: Gray
+    uniqueID: 444807871
+    locked: 0
+  - name: UI
+    uniqueID: 975774123
     locked: 0

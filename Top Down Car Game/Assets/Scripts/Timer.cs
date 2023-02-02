@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     float currentTime = 0f;
-    float startTime = 300f;
+    float startTime = 500f;
     [SerializeField] TextMeshProUGUI countdownText;
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(0);
         }
     }
 }

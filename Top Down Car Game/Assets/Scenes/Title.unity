@@ -1568,14 +1568,14 @@ MonoBehaviour:
   DisplaySizeY: 480
   StretchToDisplay: 1
   AspectRatio: 1.33
-  EnableTVCurvature: 0
-  Curvature: 0.24
+  EnableTVCurvature: 1
+  Curvature: 0.28
   TVOverlay: {fileID: 2800000, guid: 983b4e2248d599443981d96b39576aeb, type: 3}
   EnablePixelMask: 1
   PixelMaskTexture: {fileID: 2800000, guid: 55b9f85457b9afc46834d927aa2e61cc, type: 3}
   MaskRepeatX: 160
   MaskRepeatY: 90
-  PixelMaskBrightness: 1
+  PixelMaskBrightness: 1.55
   IQOffset: {x: 0, y: 0}
   IQScale: {x: 1, y: 1}
   RFNoise: 0.1

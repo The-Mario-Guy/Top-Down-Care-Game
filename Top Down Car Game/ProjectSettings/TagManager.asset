@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Camera
   - Obstacle
+  - Coin
+  - Gas
   layers:
   - Default
   - TransparentFX

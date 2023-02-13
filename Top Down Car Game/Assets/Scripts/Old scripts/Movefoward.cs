@@ -14,6 +14,14 @@ public class Movefoward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+        if(LevelManager.Instance.StartGame())
+        {
+            LayerTwoMovement();
+        }
+    }
+
+    public void LayerTwoMovement()
+    {
+    transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
     }
 }

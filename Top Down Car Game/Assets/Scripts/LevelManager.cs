@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
 
     private int _countdownTimer = 3;
 
+    private bool _isGameActive = false;
+
 
     
     
@@ -30,15 +32,21 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
       Time.timeScale = 1;
+      StartCoroutine(StartCountdownTimer());
       CoinCountText.text = _coinsCollected.ToString();
       GasCountText.text = _gasAmount.ToString();
-      StartCoroutine(StartCountdownTimer());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public bool StartGame()
+    {
+        //_isGameActive = true;
+        return _isGameActive;
     }
 
     public void GameOver()
@@ -80,9 +88,9 @@ public class LevelManager : MonoBehaviour
     IEnumerator StartCountdownTimer()
     {
         //yield = pause for X
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         CountdownTimerText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         //While loop
         //WARNING: Without a proper end the system WILL crash
         while(_countdownTimer > 0)
@@ -92,6 +100,7 @@ public class LevelManager : MonoBehaviour
             _countdownTimer--; //"_countdownTimer = _countdownTime - 1;" also works the same way
         }
         CountdownTimerText.text = "GO!";
+        _isGameActive = true;
         yield return new WaitForSeconds(1f);
         CountdownTimerText.gameObject.SetActive(false);
     }

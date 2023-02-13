@@ -13,7 +13,14 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI CoinCountText;
     public TextMeshProUGUI GasCountText;
     [SerializeField] private int _coinsCollected = 0;
+    //[SerializedField] allows for you to change the value in the inspector
     [SerializeField] private int _gasAmount = 10;
+    public TextMeshProUGUI CountdownTimerText;
+
+    private int _countdownTimer = 3;
+
+
+    
     
     void Awake()
     {
@@ -67,5 +74,24 @@ public class LevelManager : MonoBehaviour
     {
         _gasAmount += amount;
         GasCountText.text = _gasAmount.ToString();
+    }
+
+    IEnumerator StartCountdownTimer()
+    {
+        //yield = pause for X
+        yield return new WaitForSeconds(0.5f);
+        CountdownTimerText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        //While loop
+        //WARNING: Without a proper end the system WILL crash
+        while(_countdownTimer > 0)
+        {
+            CountdownTimerText.text = _countdownTimer.ToString();
+            yield return new WaitForSeconds(1f);
+            _countdownTimer--; //"_countdownTimer = _countdownTime - 1;" also works the same way
+        }
+        CountdownTimerText.text = "GO!";
+        yield return new WaitForSeconds(1f);
+        CountdownTimerText.gameObject.SetActive(false);
     }
 }

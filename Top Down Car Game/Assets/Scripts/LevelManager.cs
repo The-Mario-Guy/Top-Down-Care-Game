@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour
       Time.timeScale = 1;
       CoinCountText.text = _coinsCollected.ToString();
       GasCountText.text = _gasAmount.ToString();
+      StartCoroutine(StartCountdownTimer());
     }
 
     // Update is called once per frame

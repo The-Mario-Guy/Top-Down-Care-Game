@@ -21,9 +21,6 @@ public class CoinScript : MonoBehaviour
     {
          if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("I've been hit!");
-
-
             if(this.gameObject.CompareTag("Coin"))
             {
             LevelManager.Instance.UpdateLevelCoinCount(_value);                

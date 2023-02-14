@@ -52,6 +52,10 @@ public class CarController : MonoBehaviour
      {
         if(other.gameObject.CompareTag("Start"))
         {
+          LevelManager.Instance.StartGasMeter();  
+        }
+        if(other.gameObject.CompareTag("FinishLine"))
+        {
             //Yes
         }
      }

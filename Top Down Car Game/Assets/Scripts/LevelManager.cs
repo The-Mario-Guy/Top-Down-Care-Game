@@ -13,8 +13,11 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI CoinCountText;
     public TextMeshProUGUI GasCountText;
     [SerializeField] private int _coinsCollected = 0;
-    //[SerializedField] allows for you to change the value in the inspector
+    //[SerializedField] allows for you to change the value in the inspector]
+    //Max Gas amount vv
     [SerializeField] private int _gasAmount = 10;
+
+    [SerializeField] private int _currentGasAmount = 10;
     public TextMeshProUGUI CountdownTimerText;
 
     private int _countdownTimer = 3;
@@ -81,8 +84,17 @@ public class LevelManager : MonoBehaviour
     }
     public void UpdateGasAmount(int amount)
     {
-        _gasAmount += amount;
-        GasCountText.text = _gasAmount.ToString();
+        if(_currentGasAmount < _gasAmount)
+        {
+        _currentGasAmount += amount;
+        GasCountText.text = _currentGasAmount.ToString();
+        }
+        
+    }
+
+    public void StartGasMeter()
+    {
+        StartCoroutine(UpdateGasMeter());
     }
 
     IEnumerator StartCountdownTimer()
@@ -103,5 +115,15 @@ public class LevelManager : MonoBehaviour
         _isGameActive = true;
         yield return new WaitForSeconds(1f);
         CountdownTimerText.gameObject.SetActive(false);
+    }
+
+    IEnumerator UpdateGasMeter()
+    {
+        while(_currentGasAmount > 0)
+        {
+            yield return new WaitForSeconds(1.4f);
+            _currentGasAmount--;
+            GasCountText.text = _currentGasAmount.ToString();
+        }
     }
 }

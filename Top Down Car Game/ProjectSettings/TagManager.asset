@@ -9,6 +9,8 @@ TagManager:
   - Gas
   - Start
   - FinishLine
+  - Boost
+  - Oil
   layers:
   - Default
   - TransparentFX

@@ -5,8 +5,10 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     //allows for the value to be edited in the inspector
-    [SerializeField] private float _movespeed = 8f;
-    [SerializeField] private float _turnspeed = 8f;
+    [SerializeField] private float _movespeed = 5f;
+
+    [SerializeField] private float _boostAmount = 20f;
+    [SerializeField] private float _turnspeed = 4f;
     [SerializeField] private float _xRange = 2.18f;
     // Start is called before the first frame update
     void Start()
@@ -58,5 +60,27 @@ public class CarController : MonoBehaviour
         {
             //Yes
         }
+        if(other.gameObject.CompareTag("Boost"))
+        {
+            StartCoroutine(SetBoost());
+        }
+        if(other.gameObject.CompareTag("Oil"))
+        {
+            StartCoroutine(OilSpill());
+        }
+     }
+     IEnumerator SetBoost()
+     {
+        float currentSpeed = _movespeed;
+        _movespeed = currentSpeed + _boostAmount;
+        yield return new WaitForSeconds(1f);
+        _movespeed = currentSpeed;
+     }
+     IEnumerator OilSpill()
+     {
+        float currentSpeed = _movespeed;
+        _movespeed = currentSpeed - 2f;
+        yield return new WaitForSeconds(1f);
+        _movespeed = currentSpeed;
      }
 }

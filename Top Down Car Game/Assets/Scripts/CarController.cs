@@ -10,6 +10,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private float _boostAmount = 20f;
     [SerializeField] private float _turnspeed = 4f;
     [SerializeField] private float _xRange = 2.18f;
+
+    [SerializeField] private bool _crossedFinishLine = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,13 @@ public class CarController : MonoBehaviour
         if (transform.position.x < -_xRange)
         {
             transform.position = new Vector3(-_xRange, transform.position.y, transform.position.z);
-        }  
+        }
+    
+      
+    }
+      public bool CrossedFinishLine()
+    {
+        return _crossedFinishLine;
     }
 
      private void OnCollisionEnter2D(Collision2D other) 
@@ -58,7 +66,8 @@ public class CarController : MonoBehaviour
         }
         if(other.gameObject.CompareTag("FinishLine"))
         {
-            //Yes
+            _crossedFinishLine = true;
+            LevelManager.Instance.Win();
         }
         if(other.gameObject.CompareTag("Boost"))
         {

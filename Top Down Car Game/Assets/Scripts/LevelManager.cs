@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject PausePanel;
     public GameObject GameOverPanel;
+    public GameObject WinnerisYouPanel;
     public TextMeshProUGUI CoinCountText;
     public TextMeshProUGUI GasCountText;
     [SerializeField] private int _coinsCollected = 0;
@@ -56,6 +57,11 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
+    }
+    public void Win()
+    {
+        Time.timeScale = 0;
+        WinnerisYouPanel.SetActive(true);
     }
 
     public void ReplayButtonPressed()

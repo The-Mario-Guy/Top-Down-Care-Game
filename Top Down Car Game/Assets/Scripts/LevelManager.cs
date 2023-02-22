@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     public GameObject WinnerisYouPanel;
     public TextMeshProUGUI CoinCountText;
     public TextMeshProUGUI GasCountText;
+
+    public Slider GasMeterSlider;
     [SerializeField] private int _coinsCollected = 0;
     //[SerializedField] allows for you to change the value in the inspector]
     //Max Gas amount vv
@@ -88,7 +90,22 @@ public class LevelManager : MonoBehaviour
         _coinsCollected += amount;
         CoinCountText.text = _coinsCollected.ToString();
     }
-    public void UpdateGasAmount(int amount)
+
+    public void SetMaxGasFillAmount(int amount)
+    {
+        GasMeterSlider.maxValue = amount;
+        GasMeterSlider.value = amount;
+    }
+
+    public void SetGasFillAmount(int amount) // Visable Value (Slider Value)
+    {   
+        if(_currentGasAmount < _gasAmount)
+        {
+          _currentGasAmount += amount;
+          GasMeterSlider.value = _currentGasAmount;  
+        } 
+    }
+    public void UpdateGasAmount(int amount) // Text Value 
     {
         if(_currentGasAmount < _gasAmount)
         {
@@ -130,6 +147,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(1.4f);
             _currentGasAmount--;
             GasCountText.text = _currentGasAmount.ToString();
+            GasMeterSlider.value = _currentGasAmount;
         }
 
         GameOver();

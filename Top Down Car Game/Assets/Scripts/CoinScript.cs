@@ -28,7 +28,7 @@ public class CoinScript : MonoBehaviour
 
             if(this.gameObject.CompareTag("Gas"))
             {
-            //LevelManager.Instance.UpdateGasAmount(_value);      
+            LevelManager.Instance.UpdateGasAmount(_value);    //Comment out if it causes further issues  
             LevelManager.Instance.SetGasFillAmount(_value); //Allows the slider to be affected    
             }
 

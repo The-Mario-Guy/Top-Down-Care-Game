@@ -3602,6 +3602,10 @@ PrefabInstance:
       propertyPath: ObjectToFollow
       value: 
       objectReference: {fileID: 1775135083}
+    - target: {fileID: 6595418103874507189, guid: 1695a3f7105ce5841a06d7e66114a691, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aa6f5a113be8a9e4e867806941d6cf93, type: 3}
     - target: {fileID: 6595418103874507191, guid: 1695a3f7105ce5841a06d7e66114a691, type: 3}
       propertyPath: m_Name
       value: Main Camera

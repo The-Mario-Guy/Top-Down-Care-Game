@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Mode.unity
     guid: a497557606cbf144684b1a2e9ff5d635
   - enabled: 1
-    path: Assets/Scenes/Test Course.unity
-    guid: b55748d9b98f48147ac0babc771810e1
+    path: Assets/Scenes/Course 1.unity
+    guid: fd6d4adf1e5046f40b9f5fe12efedd7f
+  - enabled: 1
+    path: Assets/Scenes/Course 2.unity
+    guid: 31b7446ff6ccb4a45a7070ed806098c8
+  - enabled: 1
+    path: Assets/Scenes/Course 3.unity
+    guid: 833ff114010bcc240994c336aab9b2c4
+  - enabled: 1
+    path: Assets/Scenes/Single Race.unity
+    guid: 1c246fb30a07bfd4a83c44643489d07b
   m_configObjects: {}

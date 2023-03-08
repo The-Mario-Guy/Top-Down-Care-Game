@@ -8,7 +8,14 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(GameObject.Find("Coin Count") != null)
+        {
+            Debug.Log("I found it!");
+        }
+        else
+        {
+            Debug.Log("Sorry mate, no coins 'ere!");
+        }
     }
 
     // Update is called once per frame

@@ -30,4 +30,15 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void SetCoinCount(int amount)
+    {
+        _coinCount += amount;
+    }
+
+    public int GetCoinCount()
+    {
+        return _coinCount;
+    }
+    //Voids don't return values
 }

@@ -59,11 +59,13 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
+        GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
     }
     public void Win()
     {
         Time.timeScale = 0;
         WinnerisYouPanel.SetActive(true);
+        GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
     }
 
     public void ReplayButtonPressed()
@@ -74,6 +76,7 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
+        GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
     }
     public void PauseButtonPressed()
     {
@@ -125,6 +128,8 @@ public class LevelManager : MonoBehaviour
         //yield = pause for X
         yield return new WaitForSeconds(0.2f);
         CountdownTimerText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        CountdownTimerText.text = "Ready";
         yield return new WaitForSeconds(1f);
         //While loop
         //WARNING: Without a proper end the system WILL crash

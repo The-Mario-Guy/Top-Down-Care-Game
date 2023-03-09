@@ -335,6 +335,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6595418104509592005, guid: 1695a3f7105ce5841a06d7e66114a691, type: 3}
+      propertyPath: m_text
+      value: SINGLE RACE!
+      objectReference: {fileID: 0}
     - target: {fileID: 6595418104657847063, guid: 1695a3f7105ce5841a06d7e66114a691, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -358,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44feacf5f0b8e5428ca544ecda6622d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GlobalCoinCountText: {fileID: 0}
 --- !u!1 &144692637 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6595418103453801028, guid: 1695a3f7105ce5841a06d7e66114a691, type: 3}

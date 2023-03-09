@@ -78,6 +78,21 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("Title");
         GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
     }
+    public void NextLevel()
+    {
+        Time.timeScale = 1;
+        int currentSceneIndex;
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex +1);
+        GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
+    }
+    public void FinalCourse()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Course 1");
+        GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
+    }
+    
     public void PauseButtonPressed()
     {
         Time.timeScale = 0;

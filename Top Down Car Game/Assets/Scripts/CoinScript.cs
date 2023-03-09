@@ -23,7 +23,7 @@ public class CoinScript : MonoBehaviour
         {
             if(this.gameObject.CompareTag("Coin"))
             {
-            LevelManager.Instance.UpdateLevelCoinCount(_value);                
+            LevelManager.Instance.UpdateLevelCoinCount(_value);   
             }
 
             if(this.gameObject.CompareTag("Gas"))

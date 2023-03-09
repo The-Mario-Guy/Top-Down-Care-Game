@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public TextMeshProUGUI GlobalCoinCountText;
     void Start()
     {
         if(GameObject.Find("Coin Count") != null)
         {
-            Debug.Log("I found it!");
+         GlobalCoinCountText.text = GameManager.Instance.GetCoinCount().ToString();   
         }
         else
         {
-            Debug.Log("Sorry mate, no coins 'ere!");
+            Debug.Log("Hey idiot, the Coin Counter doesn't exsist 'ere!");
         }
+       
     }
 
     // Update is called once per frame

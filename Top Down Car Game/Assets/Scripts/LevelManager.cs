@@ -14,7 +14,17 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI CoinCountText;
     public TextMeshProUGUI GasCountText;
 
+    public TextMeshProUGUI CurrentDistanceWon, CurrentDistanceLost; // commas allow you to create 2 variables with the same data type
+    public TextMeshProUGUI BestDistanceWon, BestDistanceLost;
+
     public Slider GasMeterSlider;
+
+    public Transform PlayerCar;
+
+    [SerializeField] private Vector2 _startPos, _endPos;
+
+    private float _distanceTravled;
+
     [SerializeField] private int _coinsCollected = 0;
     //[SerializedField] allows for you to change the value in the inspector]
     //Max Gas amount vv
@@ -37,6 +47,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      _startPos = PlayerCar.position;
       Time.timeScale = 1;
       StartCoroutine(StartCountdownTimer());
       CoinCountText.text = _coinsCollected.ToString();
@@ -57,12 +68,16 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
+        _endPos = PlayerCar.position;
+        CalculateDistanceTraveled();
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
         GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
     }
     public void Win()
     {
+        _endPos = PlayerCar.position;
+        CalculateDistanceTraveled();
         Time.timeScale = 0;
         WinnerisYouPanel.SetActive(true);
         GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
@@ -77,6 +92,18 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
         GameManager.Instance.SetCoinCount(_coinsCollected); //Sets the coin amount collected
+    }
+
+    public void CalculateDistanceTraveled()
+    {
+        float totalDistance = _endPos.y - _startPos.y;
+        //Debug.Log(totalDistance);
+        GameManager.Instance.SetBestDistanceTraveled(totalDistance);
+        float bestDistance = GameManager.Instance.GetBestDistanceTravled();
+        CurrentDistanceLost.text = ((int)totalDistance).ToString();
+        CurrentDistanceWon.text = ((int)totalDistance).ToString();
+        BestDistanceLost.text = ((int)bestDistance).ToString();
+        BestDistanceWon.text = ((int)bestDistance).ToString();
     }
     public void NextLevel()
     {

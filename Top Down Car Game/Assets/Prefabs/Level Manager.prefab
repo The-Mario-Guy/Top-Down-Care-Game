@@ -49,7 +49,12 @@ MonoBehaviour:
   WinnerisYouPanel: {fileID: 0}
   CoinCountText: {fileID: 0}
   GasCountText: {fileID: 0}
+  CurrentDistanceWon: {fileID: 0}
+  CurrentDistanceLost: {fileID: 0}
+  BestDistanceWon: {fileID: 0}
+  BestDistanceLost: {fileID: 0}
   GasMeterSlider: {fileID: 0}
+  PlayerCar: {fileID: 0}
   _coinsCollected: 0
   _gasAmount: 10
   _currentGasAmount: 10

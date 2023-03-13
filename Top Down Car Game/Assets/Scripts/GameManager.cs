@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] private int _coinCount = 0;
+
+    [SerializeField] private float _bestDistance = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -41,4 +43,16 @@ public class GameManager : MonoBehaviour
         return _coinCount;
     }
     //Voids don't return values
+
+    public void SetBestDistanceTraveled(float amount)
+    {
+        if(_bestDistance < amount)
+        {
+            _bestDistance = amount;
+        }
+    }
+    public float GetBestDistanceTravled()
+    {
+        return _bestDistance;
+    }
 }

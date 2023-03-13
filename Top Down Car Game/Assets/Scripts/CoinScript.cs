@@ -5,7 +5,7 @@ using TMPro;
 
 public class CoinScript : MonoBehaviour
 {
-    [SerializeField] private int _value = 0;
+    [SerializeField] private int _value = 1;
     // Start is called before the first frame update
     void Start()
     {
